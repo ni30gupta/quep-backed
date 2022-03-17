@@ -10,7 +10,11 @@ const app = express();
 
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 // Database
-mongoose.connect("mongodb://localhost/test1", {});
+// mongoose.connect("mongodb://localhost/test1", {});
+mongoose.connect(
+  "mongodb+srv://nitish:ni3012345@cluster0.kpp5v.mongodb.net/test1?retryWrites=true&w=majority",
+  {}
+);
 
 const db = mongoose.connection;
 
