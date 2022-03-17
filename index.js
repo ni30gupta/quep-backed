@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const UserRoute = require("./routes/Users");
 const cors = require("cors");
+require("dotenv").config();
 
 // Create express app
 const app = express();
@@ -28,4 +29,4 @@ app.get("/", (req, res) => {
 app.use("/users", UserRoute);
 
 // Starting server
-app.listen(5000, console.log("Listening on port 3000"));
+app.listen(process.env.PORT || 5005, console.log("server running"));
